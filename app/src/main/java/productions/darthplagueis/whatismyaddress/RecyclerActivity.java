@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +35,14 @@ public class RecyclerActivity extends AppCompatActivity {
         Map<String, ?> keys = getPreferences.getAll();
         for (Map.Entry<String, ?> entry : keys.entrySet()) {
             prefList.add(entry.getValue().toString());
+            Log.d("map values", entry.getKey() + ": " + entry.getValue().toString());
         }
 
         List<EmailDisplay> emailDisplayList = new ArrayList<>();
 
         for (String email : prefList) {
             emailDisplayList.add(new EmailDisplay(email));
+            Log.d("display list", email);
         }
 
         EmailDisplayAdapter adapter = new EmailDisplayAdapter(emailDisplayList);
