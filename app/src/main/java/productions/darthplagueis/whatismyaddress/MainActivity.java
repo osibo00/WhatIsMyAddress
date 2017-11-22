@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
-                intent.putExtra("emailKey", ADDRESS_SHARED_PREFERENCES);
+                intent.putExtra("sharedpref", ADDRESS_SHARED_PREFERENCES);
                 startActivity(intent);
             }
         });
